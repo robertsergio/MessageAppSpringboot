@@ -2,7 +2,6 @@ package org.message.controller;
 
 import java.util.List;
 
-import org.hibernate.exception.ConstraintViolationException;
 import org.message.exception.CustomException;
 import org.message.model.User;
 import org.message.service.UserService;
@@ -19,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/user")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "${crossorigin.host}")
 public class UserController {
 
 	@Autowired

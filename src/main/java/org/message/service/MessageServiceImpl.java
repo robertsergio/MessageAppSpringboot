@@ -1,6 +1,5 @@
 package org.message.service;
 
-import java.util.Date;
 import java.util.List;
 
 import org.message.model.Message;

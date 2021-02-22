@@ -1,0 +1,5 @@
+{"properties": [{
+  "name": "crossorigin.host",
+  "type": "java.lang.String",
+  "description": "A description for 'crossorigin.host'"
+}]}
