@@ -9,7 +9,7 @@ import javax.persistence.*;
 public class Message{
 
 	@Id
-    @Column
+	@Column(columnDefinition = "serial")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int messageId;
 	
