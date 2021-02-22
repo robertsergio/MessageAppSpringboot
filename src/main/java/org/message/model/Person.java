@@ -3,7 +3,7 @@ package org.message.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "user")
+@Table(name = "person")
 public class Person{
 
 	@Id
