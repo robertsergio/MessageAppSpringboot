@@ -3,7 +3,7 @@ package org.message.controller;
 import java.util.List;
 
 import org.message.exception.CustomException;
-import org.message.model.Person;
+import org.message.model.User;
 import org.message.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -26,10 +26,10 @@ public class UserController {
 	
 	@PostMapping("/{name}")
 	//better if we return a Data Result Object
-	public Person register(@PathVariable("name") String name) throws CustomException
+	public User register(@PathVariable("name") String name) throws CustomException
 	{
 		try {
-			return userService.add(new Person(0, name));
+			return userService.add(new User(0, name));
 		}
 		catch(Exception e)
 		{
@@ -39,18 +39,18 @@ public class UserController {
 	}
 	
 	@GetMapping
-	public List<Person> list()
+	public List<User> list()
 	{
 		return userService.list();
 	}
 	
 	@GetMapping(path = {"/{id}"})
-    public Person get(@PathVariable("id") int id){
+    public User get(@PathVariable("id") int id){
         return userService.get(id);
     }
     
     @PutMapping(path = {"/{id}"})
-    public Person edit(@RequestBody Person user, @PathVariable("id") int id){
+    public User edit(@RequestBody User user, @PathVariable("id") int id){
         user.setUserId(id);
         try {
         	return userService.edit(user);
@@ -62,7 +62,7 @@ public class UserController {
         
     }
     @DeleteMapping(path = {"/{id}"})
-    public Person delete(@PathVariable("id") int id){
+    public User delete(@PathVariable("id") int id){
     	try {
     		return this.userService.delete(id);
 		}

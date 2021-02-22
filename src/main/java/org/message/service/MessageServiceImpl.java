@@ -3,7 +3,7 @@ package org.message.service;
 import java.util.List;
 
 import org.message.model.Message;
-import org.message.model.Person;
+import org.message.model.User;
 import org.message.repo.MessageRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,7 +15,7 @@ public class MessageServiceImpl implements MessageService{
 	private MessageRepo repo;
 	
 	@Override
-	public List<Message> list(Person user) {
+	public List<Message> list(User user) {
 		return repo.findByReceiverUserId(user.getUserId());
 	}
 

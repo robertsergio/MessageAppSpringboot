@@ -4,21 +4,21 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "person")
-public class Person{
+public class User{
 
 	@Id
-    @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(columnDefinition = "serial")
 	private int userId;
 	
 	@Column(length=255, unique = true)
 	private String name;
 	
-	public Person(){
+	public User(){
 		
 	}
 	
-	public Person(int userId, String name) {
+	public User(int userId, String name) {
 		this.userId = userId;
 		this.name = name;
 	}
