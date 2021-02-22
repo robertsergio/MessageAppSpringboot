@@ -2,15 +2,15 @@ package org.message.repo;
 
 import java.util.List;
 
-import org.message.model.User;
+import org.message.model.Person;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.Repository;
 
-public interface UserRepo extends JpaRepository<User, Integer>{
+public interface UserRepo extends JpaRepository<Person, Integer>{
 
-	List<User> findAll();
-	User findById(int id);
-	User findByName(String name);
-	User save(User user);
-    void delete(User user);
+	List<Person> findAll();
+	Person findById(int id);
+	Person findByName(String name);
+	Person save(Person user);
+    void delete(Person user);
 }

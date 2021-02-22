@@ -17,10 +17,10 @@ public class Message{
 	private String message;
 	
 	@ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	private User sender;
+	private Person sender;
 	
 	@ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	private User receiver;
+	private Person receiver;
 	
 	@Temporal(TemporalType.TIMESTAMP)
     private java.util.Date sent;
@@ -32,7 +32,7 @@ public class Message{
 		
 	}
 	
-	public Message(int messageId, String message, User sender, User receiver, Date sent, Date seen) {
+	public Message(int messageId, String message, Person sender, Person receiver, Date sent, Date seen) {
 		this.messageId = messageId;
 		this.message = message;
 		this.sender = sender;
@@ -57,19 +57,19 @@ public class Message{
 		this.message = message;
 	}
 
-	public User getSender() {
+	public Person getSender() {
 		return sender;
 	}
 
-	public void setSender(User sender) {
+	public void setSender(Person sender) {
 		this.sender = sender;
 	}
 
-	public User getReceiver() {
+	public Person getReceiver() {
 		return receiver;
 	}
 
-	public void setReceiver(User receiver) {
+	public void setReceiver(Person receiver) {
 		this.receiver = receiver;
 	}
 

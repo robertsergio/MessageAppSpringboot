@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.message.exception.CustomException;
 import org.message.model.Message;
-import org.message.model.User;
+import org.message.model.Person;
 import org.message.service.MessageService;
 import org.message.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,8 +33,8 @@ public class MessageController {
 	public Message send(@PathVariable("sender") String sender, @PathVariable("receiver") String receiver, String message) throws CustomException
 	{
 		try {
-			User senderUser = userService.getByName(sender);
-			User receiverUser = userService.getByName(receiver);
+			Person senderUser = userService.getByName(sender);
+			Person receiverUser = userService.getByName(receiver);
 			
 			if(senderUser != null && receiverUser != null)
 			{
@@ -52,7 +52,7 @@ public class MessageController {
 	@GetMapping("/{receiver}")
 	public List<Message> messages( @PathVariable("receiver") String receiver) 
 	{
-		User u = userService.getByName(receiver);
+		Person u = userService.getByName(receiver);
 		
 		if(u != null)
 		{

@@ -2,16 +2,16 @@ package org.message.service;
 
 import java.util.List;
 
-import org.message.model.User;
+import org.message.model.Person;
 import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UserService {
 
-	List<User> list();
-	User get(int id);
-	User getByName(String name);
-	User add(User user);
-	User edit(User user);
-	User delete(int id);
+	List<Person> list();
+	Person get(int id);
+	Person getByName(String name);
+	Person add(Person user);
+	Person edit(Person user);
+	Person delete(int id);
 }

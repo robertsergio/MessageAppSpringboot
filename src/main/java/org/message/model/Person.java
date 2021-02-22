@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "user")
-public class User{
+public class Person{
 
 	@Id
     @Column
@@ -14,11 +14,11 @@ public class User{
 	@Column(length=255, unique = true)
 	private String name;
 	
-	public User(){
+	public Person(){
 		
 	}
 	
-	public User(int userId, String name) {
+	public Person(int userId, String name) {
 		this.userId = userId;
 		this.name = name;
 	}
